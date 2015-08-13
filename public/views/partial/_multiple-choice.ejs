@@ -6,7 +6,7 @@
         <% for(var i = 0; i < multipleChoice.length; i++){ %>
         <li>
             <header><%= multipleChoice[i].question%></header>
-            <ol type="A">
+            <ol type="A" class="list-unstyled">
                 <% var array = ['A', 'B', 'C', 'D'];%>
                 <% for(var x = 0; x < multipleChoice[i].options.length; x++){ %>
                 <li class="checkbox"><label><input type="checkbox" name="multipleChoice_<%= i%>" value="<%= array[x]%>"

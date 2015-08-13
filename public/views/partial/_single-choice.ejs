@@ -6,7 +6,7 @@
         <% for(var i = 0; i < singleChoice.length; i++){ %>
         <li>
             <header><%= singleChoice[i].question%></header>
-            <ol type="A">
+            <ol type="A" class="list-unstyled">
                 <% var array = ['A', 'B', 'C', 'D'];%>
                 <% for(var x = 0; x < singleChoice[i].options.length; x++){ %>
                 <li class="radio"><label><input type="radio" name='singleChoice_<%= i%>' value='<%= array[x]%>'
