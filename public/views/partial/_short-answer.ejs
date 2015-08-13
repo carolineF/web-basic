@@ -1,0 +1,13 @@
+<% if(shortAnswer.length > 0){ %>
+<section>
+    <header><h3>五、简答题</h3></header>
+    <ol>
+        <% for(var i = 0; i < shortAnswer.length; i++){ %>
+        <li>
+            <p><label><%= shortAnswer[i].question%></label></p>
+            <textarea rows="5"></textarea>
+        </li>
+        <% } %>
+    </ol>
+</section>
+<% } %>

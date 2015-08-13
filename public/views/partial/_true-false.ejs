@@ -1,0 +1,14 @@
+<% if(trueFalse.length > 0){ %>
+<section>
+    <header><h3>四、判断题</h3></header>
+    <ol>
+        <% for(var i = 0; i < trueFalse.length; i++){ %>
+        <li>
+            <label><%= trueFalse[i].question%></label>
+            <input type="radio" value="V" name="trueFalse_<%= i%>">V
+            <input type="radio" value="X" name="trueFalse_<%= i%>">X
+        </li>
+        <% } %>
+    </ol>
+</section>
+<% } %>

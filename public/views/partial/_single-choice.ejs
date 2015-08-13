@@ -1,0 +1,17 @@
+<% if(singleChoice.length > 0) { %>
+<section>
+    <header><h3>二、选择题</h3></header>
+    <ol>
+        <% for(var i = 0; i < singleChoice.length; i++){ %>
+        <li>
+            <header><%= singleChoice[i].question%></header>
+            <ol type="A">
+                <% for(var x = 0; x < singleChoice[i].options.length; x++){ %>
+                <li><label><input type="radio" name="singleChoice_<%= i%>"><%= singleChoice[i].options[x]%></label></li>
+                <% }%>
+            </ol>
+        </li>
+        <% } %>
+    </ol>
+</section>
+<% } %>
