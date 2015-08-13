@@ -5,7 +5,7 @@
         <% for(var i = 0; i < shortAnswer.length; i++){ %>
         <li>
             <p><label><%= shortAnswer[i].question%></label></p>
-            <textarea rows="5"></textarea>
+            <textarea name="shortAnswer_<%= i%>" rows="5"></textarea>
         </li>
         <% } %>
     </ol>

@@ -6,8 +6,8 @@
         <% for(var i = 0; i < fillBlack.length; i++){ %>
         <li>
             <label><%= fillBlack[i].question%>
-                <% for(var x = 0; x < fillBlack[i].count; x++){ %>
-                <input name="fillBlack_<%= i%>>" type="text">
+                <% for(var x = 0; x < fillBlack[i].answer.split('、').length; x++){ %>
+                <input name="fillBlack_<%= i%>" type="text">
                 <% }%>
             </label>
         </li>
