@@ -1,18 +1,23 @@
 <% if(fillBlack.length > 0){ %>
-<section>
-    <header><h3>一、填空题</h3></header>
-    <ol>
+<section class='form-group row panel panel-default'>
+    <header class="panel-heading"><h3>一、填空题</h3></header>
+    <div>
+        <ol>
         <% for(var i = 0; i < fillBlack.length; i++){ %>
         <li>
-            <label><%= fillBlack[i].question%>
-                <% for(var x = 0; x < fillBlack[i].answer.split('、').length; x++){ %>
-                <input name="fillBlack_<%= i%>" type="text" value="<%= typeof(fillBlack[i].input) === 'string' ? fillBlack[i].input :
-                    fillBlack[i].input[x]%>">
+            <div class="row fillInTopic">
+            <label class='col-md-3'><%= fillBlack[i].question%></label>
+                <div class="col-md-6 col-md-pull-1 row">
+                    <% var length = fillBlack[i].answer.split('、').length; %>
+                <% for(var x = 0; x < length; x++){ %>
+                    <div class='col-md-<%= 12/length%>'><input class='form-control' name="fillBlack_<%= i%>" type="text"
+                         value="<%= typeof(fillBlack[i].input) === 'string' ? fillBlack[i].input :
+                            fillBlack[i].input[x]%>"></div>
                 <% }%>
-            </label>
+                </div>
+            </div>
         </li>
         <% } %>
-
     </ol>
 </section>
 <% } %>

@@ -13,6 +13,7 @@ app.use(bodyParser());
 app.set('views', './public/views');
 app.set('view engine', 'ejs');
 
+app.use(express.static(path.join(__dirname,'public')));
 
 app.listen(8090, function() {
     console.log('Express server listening at 8090……');

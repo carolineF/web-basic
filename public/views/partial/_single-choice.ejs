@@ -1,6 +1,7 @@
 <% if(singleChoice.length > 0) { %>
-<section>
-    <header><h3>二、选择题</h3></header>
+<section class='form-group row panel panel-default'>
+    <header class="panel-heading"><h3>二、选择题</h3></header>
+    <div class="panel-body">
     <ol>
         <% for(var i = 0; i < singleChoice.length; i++){ %>
         <li>
@@ -8,7 +9,7 @@
             <ol type="A">
                 <% var array = ['A', 'B', 'C', 'D'];%>
                 <% for(var x = 0; x < singleChoice[i].options.length; x++){ %>
-                <li><label><input type="radio" name='singleChoice_<%= i%>' value='<%= array[x]%>'
+                <li class="radio"><label><input type="radio" name='singleChoice_<%= i%>' value='<%= array[x]%>'
                         <% if(array[x] === singleChoice[i].input){%> checked='checked' <%}%>>
                         <%= singleChoice[i].options[x]%></label></li>
                 <% }%>
@@ -16,5 +17,6 @@
         </li>
         <% } %>
     </ol>
+    </div>
 </section>
 <% } %>
