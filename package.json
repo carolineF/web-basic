@@ -1,0 +1,10 @@
+{
+  "name": "web-basic",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "ejs": "^2.3.3",
+    "express": "^4.13.3"
+  },
+  "devDependencies": {}
+}

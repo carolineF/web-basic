@@ -1,0 +1,9 @@
+{
+  "name": "web-basic",
+  "version": "0.0.1",
+  "ignore": [
+    "node_modules",
+    "public/libs",
+    "bower_components"
+  ]
+}
