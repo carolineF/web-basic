@@ -1,30 +1,26 @@
 'use strict';
 
-var data = require('../config/data.json');
-var TopicFactory = require('../factory/topic-factory');
-var Utils = require('../utils/utils.js');
+var TopicViewModel = require('../viewModel/topic-view-model');
+var Utils = require('../utils/utils');
 
 function IndexController() {
 
 }
 
 IndexController.prototype.index = function(request, response) {
-    var topicArray = [];
-    var topicFactory = new TopicFactory();
-    var topics = data.topicArray;
+    var topicViewModel = new TopicViewModel();
 
-    for(var i = 0; i <topics.length; i++) {
-        topicArray.push(topicFactory.getTopicObj(topics[i]));
-    }
-
-    var topics = Utils.getTopicObj(topicArray);
-    console.log(topics);
-
-    response.render('index', topics);
+    response.render('index', topicViewModel.getViewModel());
 };
 
 IndexController.prototype.submit = function(request, response) {
-    console.log(request.body);
+    var topicViewModel = new TopicViewModel();
+
+    var topics = topicViewModel.getViewModel();
+
+   var topic = Utils.getTopics(topics, request.body);
+
+    response.render('index', topic);
 };
 
 module.exports = IndexController;

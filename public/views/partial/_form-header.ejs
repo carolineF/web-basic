@@ -4,11 +4,11 @@
         <div>
             <label>考试科目：<u>统一建模语言</u></label>
             <label>时间：<u>100分钟</u></label>
-            <label>得分：<u></u></label>
+            <label>得分：<u><%= score%></u></label>
         </div>
         <div>
-            <label>班级：<input type="text"></label>
-            <label>学号：<input type="text"></label>
-            <label>姓名：<input type="text"></label>
+            <label>班级：<input type="text" name="class" value="<%= className%>"></label>
+            <label>学号：<input type="text" name="id" value="<%= id%>"></label>
+            <label>姓名：<input type="text" name="name" value="<%= name%>"></label>
         </div>
     </div>

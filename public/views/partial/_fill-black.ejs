@@ -1,4 +1,3 @@
-
 <% if(fillBlack.length > 0){ %>
 <section>
     <header><h3>一、填空题</h3></header>
@@ -7,7 +6,8 @@
         <li>
             <label><%= fillBlack[i].question%>
                 <% for(var x = 0; x < fillBlack[i].answer.split('、').length; x++){ %>
-                <input name="fillBlack_<%= i%>" type="text">
+                <input name="fillBlack_<%= i%>" type="text" value="<%= typeof(fillBlack[i].input) === 'string' ? fillBlack[i].input :
+                    fillBlack[i].input[x]%>">
                 <% }%>
             </label>
         </li>
