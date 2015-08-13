@@ -10,7 +10,7 @@
                 <% var array = ['A', 'B', 'C', 'D'];%>
                 <% for(var x = 0; x < multipleChoice[i].options.length; x++){ %>
                 <li class="checkbox"><label><input type="checkbox" name="multipleChoice_<%= i%>" value="<%= array[x]%>"
-                        <% if(multipleChoice[i].answer.split('、').indexOf(array[x]) !== -1){%> checked="checked" <%}%>>
+                        <% if(multipleChoice[i].input.split('、').indexOf(array[x]) !== -1){%> checked="checked" <% } %>>
                         <%= multipleChoice[i].options[x]%></label></li>
                 <% } %>
             </ol>
