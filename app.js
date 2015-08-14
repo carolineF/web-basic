@@ -10,7 +10,7 @@ var app = new express();
 
 app.use(bodyParser());
 
-app.set('views', './public/views');
+app.set('views', './views');
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname,'public')));

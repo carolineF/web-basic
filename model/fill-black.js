@@ -14,7 +14,8 @@ FillBlack.prototype.mark = function() {
     var score = 0;
 
     for(var i = 0; i < this.input.length; i++){
-        if(allAnswer.indexOf(this.input[i]) !== -1){
+       var isRepeat = this.input.slice(i+1, this.input.length).indexOf(this.input[i]) !== -1;
+        if(!isRepeat && allAnswer.indexOf(this.input[i]) !== -1){
             score += this.score / allAnswer.length;
         }
     }

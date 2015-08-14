@@ -36,9 +36,9 @@ Utils.getTopics = function(topics, body) {
     }
 
     topics.score = score;
-    topics.className =body['class'];
-    topics.id = body['id'];
-    topics.name = body['name'];
+    topics.className =body['className'];
+    topics.userId = body['userId'];
+    topics.userName = body['userName'];
 
     return topics;
 };

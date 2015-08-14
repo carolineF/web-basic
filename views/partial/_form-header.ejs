@@ -1,0 +1,31 @@
+<form action='/' method='post' id="textForm" class="col-md-10 col-md-offset-1" role='form' autocomplete="off">
+
+  <div class='form-group'>
+    <hr>
+    <blockquote class="col-md-offset-3 badge"><h1>统一建模语言理论测试</h1></blockquote>
+    <p class="row">
+      <label class="col-md-4 col-xs-12">考试科目：<u>统一建模语言UML</u></label>
+      <label class="col-md-4 col-xs-12">时间：<u>100分钟</u></label>
+      <label class="col-md-4 col-xs-12">得分：<u><%= score%></u></label>
+    </p>
+    <div class="row">
+      <div class="col-md-4 row">
+        <label class="col-md-4 col-xs-3">班级：</label>
+        <div class="col-md-8 col-md-pull-2">
+          <input name='className' class='form-control' type="text" value='<%= className%>'>
+        </div>
+      </div>
+      <div class="col-md-4 row">
+        <label class="col-md-4 col-xs-3">学号：</label>
+        <div class="col-md-8 col-md-pull-2">
+          <input name='userId' class='form-control' type="text" value='<%= userId%>'>
+        </div>
+      </div>
+      <div class="col-md-4 row">
+        <label class="col-md-4 col-xs-3">姓名：</label>
+        <div class="col-md-8 col-md-pull-2">
+          <input name='userName' class='form-control' type="text" value='<%= userName%>'>
+        </div>
+      </div>
+    </div>
+  </div>

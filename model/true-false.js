@@ -10,11 +10,7 @@ TrueFalse.prototype  = Object.create(Topic.prototype);
 TrueFalse.prototype.constructor = TrueFalse;
 
 TrueFalse.prototype.mark = function() {
-    if(this.input === this.answer) {
-        return this.score;
-    }
-
-    return 0;
+  return this.input === this.answer ? this.score : 0;
 };
 
 module.exports = TrueFalse;

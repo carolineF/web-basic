@@ -1,0 +1,20 @@
+<% if(trueFalse.length > 0){ %>
+<section class='form-group row panel panel-default'>
+  <header class="panel-heading"><h3>四、判断题</h3></header>
+  <div class="panel-body">
+    <ol>
+      <% for(var i = 0; i < trueFalse.length; i++){ %>
+        <li>
+          <label><%= trueFalse[i].question%></label>
+          <input type="radio" value="V" name="trueFalse_<%= i%>"
+          <%if(trueFalse[i].input === 'V'){%> checked="checked" <%}%>>
+          <span class="glyphicon glyphicon-ok"></span>
+          <input type="radio" value="X" name="trueFalse_<%= i%>"
+          <%if(trueFalse[i].input === 'X'){%> checked="checked" <%}%>>
+          <span class="glyphicon glyphicon-remove"></span>
+        </li>
+      <% } %>
+    </ol>
+  </div>
+</section>
+<% } %>
