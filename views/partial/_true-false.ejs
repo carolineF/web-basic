@@ -6,10 +6,10 @@
       <% for(var i = 0; i < trueFalse.length; i++){ %>
         <li>
           <label><%= trueFalse[i].question%></label>
-          <input type="radio" value="V" name="trueFalse_<%= i%>"
+          <input type="radio" value="V" name="<%= trueFalse[i].name%>"
           <%if(trueFalse[i].input === 'V'){%> checked="checked" <%}%>>
           <span class="glyphicon glyphicon-ok"></span>
-          <input type="radio" value="X" name="trueFalse_<%= i%>"
+          <input type="radio" value="X" name="<%= trueFalse[i].name%>"
           <%if(trueFalse[i].input === 'X'){%> checked="checked" <%}%>>
           <span class="glyphicon glyphicon-remove"></span>
         </li>

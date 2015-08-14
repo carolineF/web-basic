@@ -1,11 +1,11 @@
 'use strict';
 
-function Topic(type, question, options, answer, score, input) {
-    this.type = type;
+function Topic(question, options, answer, score, name, input) {
     this.question = question;
     this.options = options;
     this.answer = answer;
     this.score = score;
+    this.name = name;
     this.input = input || '';
 }
 

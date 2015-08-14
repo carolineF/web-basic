@@ -6,7 +6,7 @@
     <% for(var i = 0; i < shortAnswer.length; i++){ %>
     <li>
       <p><label><%= shortAnswer[i].question%></label></p>
-      <textarea name='shortAnswer_<%= i%>' class="form-control" rows="5"><%= shortAnswer[i].input%></textarea>
+      <textarea name='<%= shortAnswer[i].name%>' class="form-control" rows="5"><%= shortAnswer[i].input%></textarea>
     </li>
     <% } %>
   </ol>

@@ -10,7 +10,7 @@
         <% var array = ['A', 'B', 'C', 'D'];%>
         <% for(var x = 0; x < singleChoice[i].options.length; x++){ %>
           <li class="radio"><label>
-            <input type="radio" name='singleChoice_<%= i%>' value='<%= array[x]%>'
+            <input type="radio" name='<%= singleChoice[i].name%>' value='<%= array[x]%>'
               <% if(array[x] === singleChoice[i].input){%> checked='checked' <%}%>>
                 <%= singleChoice[i].options[x]%></label>
           </li>

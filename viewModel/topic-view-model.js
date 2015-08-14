@@ -1,29 +1,9 @@
 'use strict';
 
-var data = require('../config/data');
-var TopicFactory = require('../factory/topic-factory');
-var Utils = require('../utils/utils.js');
-
-function TopicViewModel() {
-
+function TopicViewModel(topic, score, userMsg) {
+  this.topic = topic;
+  this.score = score;
+  this.userMsg = userMsg;
 }
-
-TopicViewModel.prototype.getViewModel = function() {
-  var topicArray = [];
-  var topicFactory = new TopicFactory();
-  var topics = data.topicArray;
-
-  for(var i = 0; i <topics.length; i++) {
-    topicArray.push(topicFactory.getTopicObj(topics[i]));
-  }
-
-  var topicObj = Utils.getTopicObj(topicArray);
-  topicObj.score = '';
-  topicObj.className = '';
-  topicObj.userId = '';
-  topicObj.userName = '';
-
-  return topicObj;
-};
 
 module.exports = TopicViewModel;

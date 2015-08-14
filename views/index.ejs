@@ -1,16 +1,16 @@
 <%- include('./partial/_head');%>
 
-<%- include('./partial/_form-header', {className: className, userId: userId, userName: userName, score: score});%>
+<%- include('./partial/_form-header', {userMsg: userMsg, score: score});%>
 
-<%- include('./partial/_fill-black', {fillBlack : fillBlack});%>
+<%- include('./partial/_fill-black', {fillBlack : topic.fillBlack});%>
 
-<%- include('./partial/_single-choice', {singleChoice : singleChoice});%>
+<%- include('./partial/_single-choice', {singleChoice : topic.singleChoice});%>
 
-<%- include('./partial/_multiple-choice', {multipleChoice : multipleChoice});%>
+<%- include('./partial/_multiple-choice', {multipleChoice : topic.multipleChoice});%>
 
-<%- include('./partial/_true-false', {trueFalse : trueFalse});%>
+<%- include('./partial/_true-false', {trueFalse : topic.trueFalse});%>
 
-<%- include('./partial/_short-answer', {shortAnswer : shortAnswer});%>
+<%- include('./partial/_short-answer', {shortAnswer : topic.shortAnswer});%>
 
 <%- include('./partial/_alert-modal');%>
 

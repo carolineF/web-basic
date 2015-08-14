@@ -11,7 +11,7 @@
           <% var length = fillBlack[i].answer.split('、').length; %>
           <% for(var x = 0; x < length; x++){ %>
             <div class='col-md-<%= 12/length%>'>
-              <input class='form-control' name="fillBlack_<%= i%>" type="text"
+              <input class='form-control' name="<%= fillBlack[i].name%>" type="text"
               value="<%= typeof(fillBlack[i].input) === 'string' ? fillBlack[i].input :
                   fillBlack[i].input[x]%>">
             </div>

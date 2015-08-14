@@ -2,8 +2,8 @@
 
 var Topic = require('./topic');
 
-function MultipleChoice(question, options, answer, score, input) {
-    Topic.call(this, 'multipleChoice', question, options, answer, score, input);
+function MultipleChoice(question, options, answer, score, name, input) {
+    Topic.call(this, question, options, answer, score, name, input);
 }
 
 MultipleChoice.prototype  = Object.create(Topic.prototype);
@@ -18,7 +18,7 @@ MultipleChoice.prototype.mark = function() {
     }
 
     for(var i = 0; i < input.length; i++){
-        if(allAnswer.indexOf(this.input[i]) === -1) {
+        if(allAnswer.indexOf(input[i]) === -1) {
             return 0;
         }
     }
