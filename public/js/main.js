@@ -5,6 +5,7 @@ function formSubmit(){
 
     if(studentClass === '' || studentId === '' || studentName === ''){
         $('#myModal').modal('show');
+        $('#className').addClass('has-error');
     }else {
         $("#textForm").submit();
     }
