@@ -36,6 +36,12 @@ INSERT INTO topic (type, question, answer, score, name)VALUES('shortAnswer', '�
   模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形；或者说是一种数学表达式。',
    20, 'shortAnswer_0');
 
+INSERT INTO options(option_name, topic_id)VALUES('',1);
+INSERT INTO options(option_name, topic_id)VALUES('',2);
+INSERT INTO options(option_name, topic_id)VALUES('',7);
+INSERT INTO options(option_name, topic_id)VALUES('',8);
+INSERT INTO options(option_name, topic_id)VALUES('',9);
+
 INSERT INTO options(option_name, topic_id)VALUES('(A)UML就是软件工程',3);
 INSERT INTO options(option_name, topic_id)VALUES('(B)UML参与到软件工程中软件开发过程中的几个阶段',3);
 INSERT INTO options(option_name, topic_id)VALUES('(C)UML与软件工程无关',3);

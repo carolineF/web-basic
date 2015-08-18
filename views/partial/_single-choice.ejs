@@ -7,12 +7,14 @@
     <li>
       <header><%= singleChoice[i].question%></header>
       <ol type="A" class="list-unstyled">
-        <% var array = ['A', 'B', 'C', 'D'];%>
-        <% for(var x = 0; x < singleChoice[i].options.length; x++){ %>
+        <% var array = ['A', 'B', 'C', 'D'];
+          var options = singleChoice[i].options.split(',');
+        %>
+        <% for(var x = 0; x < options.length; x++){ %>
           <li class="radio"><label>
             <input type="radio" name='<%= singleChoice[i].name%>' value='<%= array[x]%>'
               <% if(array[x] === singleChoice[i].input){%> checked='checked' <%}%>>
-                <%= singleChoice[i].options[x]%></label>
+                <%= options[x]%></label>
           </li>
           <% }%>
       </ol>

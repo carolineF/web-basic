@@ -12,6 +12,7 @@ function TopicFactory() {
 }
 
 TopicFactory.prototype.getTopic = function(topicObj) {
+
     if(topicObj.type === dataType.FILL_BLACK){
 
         return new FillBlack(topicObj.question, topicObj.options, topicObj.answer, topicObj.score, topicObj.name, topicObj.input);

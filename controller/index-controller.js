@@ -5,39 +5,35 @@ var HomeHelper = require('../helper/home-helper');
 var HomeControllerHelper = require('../helper/home-controller-helper');
 var Marker = require('../model/marker');
 
-var anysc = require('anysc');
+var DataBase = require('../model/database');
 
 function IndexController() {
 
 }
+var database = new DataBase();
+database.getTopics();
 
 IndexController.prototype.index = function(request, response) {
-  var homeHelper = new HomeHelper();
 
-  // var topicArray = homeHelper.getTopicArray();
+    var homeHelper = new HomeHelper();
+    var userMsg = {className: '', userId: '', userName: ''};
 
-  // var topic = homeHelper.getTopic(topicArray);
+    var topicArray = homeHelper.getTopics(database.topic);
+    var topic = homeHelper.getTopic(topicArray);
 
-  // anysc.parallel(homeHelper.getData());
-
-  var topic = homeHelper.getData();
-  var userMsg = {className: '', userId: '', userName: ''};
-
-  response.render('index', new TopicViewModel(topic, '', userMsg));
+    response.render('index', new TopicViewModel(topic, '', userMsg));
 };
 
 IndexController.prototype.submit = function(request, response) {
   var homeHelper = new HomeHelper();
 
-  var topicArray = homeHelper.getTopicArray();
-
   var homeControllerHelper = new HomeControllerHelper();
-  topicArray = homeControllerHelper.setInput(topicArray, request.body);
-
-  var marker = new Marker();
-  var score = marker.getScore(topicArray);
+  var topicArray = homeControllerHelper.setInput(database.topic, request.body);
+  topicArray = homeHelper.getTopics(topicArray);
 
   var topic = homeHelper.getTopic(topicArray);
+  var marker = new Marker();
+  var score = marker.getScore(topicArray);
 
   var userMsg = {};
   userMsg.className = request.body.className;
