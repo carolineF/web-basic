@@ -5,6 +5,8 @@ var HomeHelper = require('../helper/home-helper');
 var HomeControllerHelper = require('../helper/home-controller-helper');
 var Marker = require('../model/marker');
 
+var anysc = require('anysc');
+
 function IndexController() {
 
 }
@@ -12,9 +14,13 @@ function IndexController() {
 IndexController.prototype.index = function(request, response) {
   var homeHelper = new HomeHelper();
 
-  var topicArray = homeHelper.getTopicArray();
+  // var topicArray = homeHelper.getTopicArray();
 
-  var topic = homeHelper.getTopic(topicArray);
+  // var topic = homeHelper.getTopic(topicArray);
+
+  // anysc.parallel(homeHelper.getData());
+
+  var topic = homeHelper.getData();
   var userMsg = {className: '', userId: '', userName: ''};
 
   response.render('index', new TopicViewModel(topic, '', userMsg));
