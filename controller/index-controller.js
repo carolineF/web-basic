@@ -16,13 +16,17 @@ database.getTopics();
 
 IndexController.prototype.index = function(request, response) {
 
-    var homeHelper = new HomeHelper();
-    var userMsg = {className: '', userId: '', userName: ''};
+  var homeHelper = new HomeHelper();
+  var userMsg = {
+    className: '',
+    userId: '',
+    userName: ''
+  };
 
-    var topicArray = homeHelper.getTopics(database.topic);
-    var topic = homeHelper.getTopic(topicArray);
+  var topicArray = homeHelper.getTopics(database.topic);
+  var topic = homeHelper.getTopic(topicArray);
 
-    response.render('index', new TopicViewModel(topic, '', userMsg));
+  response.render('index', new TopicViewModel(topic, '', userMsg));
 };
 
 IndexController.prototype.submit = function(request, response) {

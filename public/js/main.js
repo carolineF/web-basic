@@ -1,12 +1,12 @@
-function formSubmit(){
-  
-    var studentClass = $('#className').val();
-    var studentId = $('#userId').val();
-    var studentName = $('#userName').val();
+function formSubmit() {
 
-    if(studentClass === '' || studentId === '' || studentName === ''){
-        $('#myModal').modal('show');
-    }else {
-        $("#textForm").submit();
-    }
+  var studentClass = $('#class').val();
+  var studentId = $('#id').val();
+  var studentName = $('#name').val();
+
+  if (studentClass === '' || studentId === '' || studentName === '') {
+    $('#myModal').modal('show');
+  } else {
+    $("#textForm").submit();
+  }
 }

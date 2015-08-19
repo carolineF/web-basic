@@ -7,12 +7,12 @@ function DataBase(){
 
 DataBase.prototype.getTopics = function() {
   var connection = mysql.createConnection(conData);
-  var _this = this;
+  var that = this;
 
   connection.connect();
   connection.query(' SELECT topic.*,GROUP_CONCAT(option_name) AS options FROM topic,options WHERE topic.id = options.topic_id group by topic.id;',
     function(err, result){
-      _this.topic = result;
+      that.topic = result;
    });
 
   connection.end();

@@ -13,27 +13,27 @@ function TopicFactory() {
 
 TopicFactory.prototype.getTopic = function(topicObj) {
 
-    if(topicObj.type === dataType.FILL_BLACK){
+  if (topicObj.type === dataType.FILL_BLACK) {
 
-        return new FillBlack(topicObj.question, topicObj.options, topicObj.answer, topicObj.score, topicObj.name, topicObj.input);
+    return new FillBlack(topicObj.question, topicObj.options, topicObj.answer, topicObj.score, topicObj.name, topicObj.input);
 
-    }else if(topicObj.type === dataType.SINGLE_CHOICE){
+  } else if (topicObj.type === dataType.SINGLE_CHOICE) {
 
-        return new SingleChoice(topicObj.question, topicObj.options, topicObj.answer, topicObj.score, topicObj.name, topicObj.input);
+    return new SingleChoice(topicObj.question, topicObj.options, topicObj.answer, topicObj.score, topicObj.name, topicObj.input);
 
-    }else if(topicObj.type === dataType.MULTIPLE_CHOICE){
+  } else if (topicObj.type === dataType.MULTIPLE_CHOICE) {
 
-        return new MultipleChoice(topicObj.question, topicObj.options, topicObj.answer, topicObj.score, topicObj.name, topicObj.input);
+    return new MultipleChoice(topicObj.question, topicObj.options, topicObj.answer, topicObj.score, topicObj.name, topicObj.input);
 
-    }else if(topicObj.type === dataType.TRUE_FALSE) {
+  } else if (topicObj.type === dataType.TRUE_FALSE) {
 
-        return new TrueFalse(topicObj.question, topicObj.options, topicObj.answer, topicObj.score, topicObj.name, topicObj.input);
+    return new TrueFalse(topicObj.question, topicObj.options, topicObj.answer, topicObj.score, topicObj.name, topicObj.input);
 
-    }else if(topicObj.type === dataType.SHORT_ANSWER) {
+  } else if (topicObj.type === dataType.SHORT_ANSWER) {
 
-        return new ShortAnswer(topicObj.question, topicObj.options, topicObj.answer, topicObj.score, topicObj.name, topicObj.input);
+    return new ShortAnswer(topicObj.question, topicObj.options, topicObj.answer, topicObj.score, topicObj.name, topicObj.input);
 
-    }
+  }
 };
 
 module.exports = TopicFactory;

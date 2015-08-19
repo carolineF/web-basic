@@ -1,6 +1,5 @@
 'use strict';
 
-var data = require('../seed/data');
 var TopicFactory = require('../factory/topic-factory');
 var FillBlack = require('../model/fill-black');
 var SingleChoice = require('../model/single-choice');
@@ -16,39 +15,39 @@ function HomeHelper() {
 }
 
 HomeHelper.prototype.getTopics = function(topics) {
-    var topicArray = [];
-    var topicFactory = new TopicFactory();
-    for(var i = 0; i <topics.length; i++) {
-        topicArray.push(topicFactory.getTopic(topics[i]));
-    }
+  var topicArray = [];
+  var topicFactory = new TopicFactory();
+  for (var i = 0; i < topics.length; i++) {
+    topicArray.push(topicFactory.getTopic(topics[i]));
+  }
 
-    return topicArray;
+  return topicArray;
 };
 
 HomeHelper.prototype.getTopic = function(topicArray) {
-    var topic = {};
+  var topic = {};
 
-    topic.fillBlack = topicArray.filter(function(topic) {
-        return topic instanceof FillBlack;
-    });
+  topic.fillBlack = topicArray.filter(function(topic) {
+    return topic instanceof FillBlack;
+  });
 
-    topic.singleChoice = topicArray.filter(function(topic) {
-        return topic instanceof SingleChoice;
-    });
+  topic.singleChoice = topicArray.filter(function(topic) {
+    return topic instanceof SingleChoice;
+  });
 
-    topic.multipleChoice = topicArray.filter(function(topic) {
-        return topic instanceof MultipleChoice;
-    });
+  topic.multipleChoice = topicArray.filter(function(topic) {
+    return topic instanceof MultipleChoice;
+  });
 
-    topic.trueFalse = topicArray.filter(function(topic) {
-        return topic instanceof TrueFalse;
-    });
+  topic.trueFalse = topicArray.filter(function(topic) {
+    return topic instanceof TrueFalse;
+  });
 
-    topic.shortAnswer = topicArray.filter(function(topic) {
-        return topic instanceof ShortAnswer;
-    });
+  topic.shortAnswer = topicArray.filter(function(topic) {
+    return topic instanceof ShortAnswer;
+  });
 
-    return topic;
+  return topic;
 };
 
 module.exports = HomeHelper;

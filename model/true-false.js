@@ -3,7 +3,7 @@
 var Topic = require('./topic');
 
 function TrueFalse(question, options, answer, score, name, input) {
-    Topic.call(this, question, options, answer, score, name, input);
+  Topic.call(this, question, options, answer, score, name, input);
 }
 
 TrueFalse.prototype  = Object.create(Topic.prototype);
