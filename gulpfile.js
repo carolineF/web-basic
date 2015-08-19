@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var conData = require('./config/database');
+var nodemon = require('nodemon');
 
 gulp.task('dbinit', function() {
   var execsql = require('execsql'),
@@ -13,7 +14,10 @@ gulp.task('dbinit', function() {
 });
 
 gulp.task('start', function() {
-
+  nodemon({
+      script: 'app.js'
+    , tasks: ['dbinit']
+    })
 });
 
 gulp.watch(['controller/*.js', 'factory/*.js', 'helper/*.js', 'model/*.js', 'router/*.js',

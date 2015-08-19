@@ -6,7 +6,7 @@ var HomeControllerHelper = require('../helper/home-controller-helper');
 var Marker = require('../model/marker');
 
 var DataBase = require('../model/database');
-
+ 
 function IndexController() {
 
 }
